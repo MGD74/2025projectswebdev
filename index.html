@@ -84,11 +84,11 @@
                     <form>
                         <div class="mb-3">
                             <label for="weight" class="form-label">Weight (kg)</label>
-                            <input type="number" class="form-control weights" id="weight" placeholder="Mass in kilogram" required >
+                            <input type="number" class="form-control weights" id="weight" placeholder="Mass in kilogram" required onkeydown ="bmi(event)">
                         </div>
                         <div class="mb-3">
                             <label for="height" class="form-label">Height (cm)</label>
-                            <input type="number" class="form-control heights" id="height" placeholder="Height in centimeter" required>
+                            <input type="number" class="form-control heights" id="height" placeholder="Height in centimeter" required onkeydown ="bmi(event)">
                         </div>
                         <button type="button" class="btn btn-primary" onclick="bodyMassIndex()">Calculate</button>
                     </form>
@@ -180,6 +180,11 @@
                     status.innerHTML = "Obese. You should consider losing some weight by eating less and exercising more. Try intermittent fasting and intense exercise.";
                     result.classList.add("text-danger");
                 }
+            }
+
+            function bmi(event) {
+                event.key === "Enter";
+                bodyMassIndex();
             }
         </script>
     </div>
